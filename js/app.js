@@ -25,22 +25,29 @@ window.onload = function(event) {
 
 		this.setFirstName = function(newFirst) {
 			name = newFirst + name.split(" ")[1];
-			log("First name is now: " + newFirst);
+			log("> First name is now: " + newFirst);
 		}
 
 		this.setFullName = function(newFull) {
 			name = newFull;
-			log("Full name is now: " + name);
+			log("> Full name is now: " + name);
 		}
 
 		this.setLastName = function(newLast) {
 			name = name.split(" ")[0] + newLast;
-			log("Last name is now: " + newLast);
+			log("> Last name is now: " + newLast);
 		}
+	}
+
+	function disable() {
+		document.getElementById("form-first").disabled = "disabled";
+		document.getElementById("form-last").disabled = "disabled";
+		document.getElementById("form-submit").disabled = "disabled";
 	}
 
 	function log(message) {
 		let element = document.createElement("p");
+		element.classList.add("message");
 		let text = document.createTextNode(message);
 
 		element.appendChild(text);
@@ -49,14 +56,15 @@ window.onload = function(event) {
 
 	function makePerson(first, last) {
 		if (first === "" || last === "") {
-			// log("Name must not be empty")
+			log("> Name must not be empty");
 			return null;
-		} else if (/^[a-zA-Z]/.test(first) || /^[a-zA-Z]/.test(last)) {
-			// log("Name must only contain alphabetical characters")
+		} else if (/^[a-zA-Z]/i.test(first) || /^[a-zA-Z]/i.test(last)) {
+			log("> Name must only contain alphabetical characters");
 			return null;
 		} else {
-			// log("Person successfully made")
-			// Disable form
+			log("> Person successfully made");
+			disable();
+
 			return Person(first + last);
 		}
 	}
@@ -97,9 +105,10 @@ window.onload = function(event) {
 		user = makePerson(this.children[0].value, this.children[1].value);
 
 		if (user) {
-			log("Person made successfully");
+			log("> Person made successfully");
+			log("> Form disabled");
 		} else {
-			log("Person not made. Try again");
+			log("> Person not made. Try again");
 		}
 	});
 
