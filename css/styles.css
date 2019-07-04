@@ -1,2 +1,28 @@
 @charset "UTF-8";
 /* real skin tones (@scheme color) */
+
+/* GENERAL */
+body, html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background-color: #FFDBAC;
+	text-align: center;
+	letter-spacing: 1px;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	font-size: 16px;
+	color: black;
+}
+
+
+
+/* HEADER */
+
+
+
+/* MAIN */
+
+
+
+/* FOOTER */
