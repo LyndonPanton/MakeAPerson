@@ -12,3 +12,7 @@
 > 3. Press the _Make A Person_ button
 > 4. You can now get information about the person made using the *Get* buttons
 > 5. Enter (a) new  name(s) input to *Set* input fields to change the name of the person
+
+## Requirements
+> 1. This application requires a browser to run
+> 2. The browser must have JavaScript available and enabled
