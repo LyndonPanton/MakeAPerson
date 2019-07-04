@@ -113,28 +113,28 @@ window.onload = function(event) {
 
 	let getFirst = document.getElementById("get-first");
 	getFirst.addEventListener("click", function(event) {
-		if (user !== null) {
+		if (user !== null || user !== undefined) {
 			user.getFirstName();
 		} else {
-			log("User has not been made");
+			log("> User has not been made");
 		}
 	});
 
 	let getLast = document.getElementById("get-last");
 	getLast.addEventListener("click", function(event) {
-		if (user !== null) {
+		if (user !== null || user !== undefined) {
 			user.getLastName();
 		} else {
-			log("User has not been made");
+			log("> User has not been made");
 		}
 	});
 
 	let getFull = document.getElementById("get-full");
 	getFull.addEventListener("click", function(event) {
-		if (user !== null) {
+		if (user !== null || user !== undefined) {
 			user.getFullName();
 		} else {
-			log("User has not been made");
+			log("> User has not been made");
 		}
 	});
 
