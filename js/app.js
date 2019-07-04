@@ -10,32 +10,32 @@ window.onload = function(event) {
 
 		this.getFirstName = function() {
 			log("> " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase());
-			// return name.split(" ")[0];
+			return name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase();
 		}
 
 		this.getFullName = function() {
 			log("> " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase() + " " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
-			// return name;
+			return name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase() + " " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase();
 		}
 
 		this.getLastName = function() {
 			log("> " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
-			// return name.split(" ")[1];
+			return name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase();
 		}
 
 		this.setFirstName = function(newFirst) {
-			name = newFirst + name.split(" ")[1];
-			log("> First name is now: " + newFirst);
+			name = newFirst + " " + name.split(" ")[1];
+			log("> First name is now: " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase());
 		}
 
 		this.setFullName = function(newFull) {
 			name = newFull;
-			log("> Full name is now: " + name);
+			log("> Full name is now: " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase() + " " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
 		}
 
 		this.setLastName = function(newLast) {
-			name = name.split(" ")[0] + newLast;
-			log("> Last name is now: " + newLast);
+			name = name.split(" ")[0] + " " + newLast;
+			log("> Last name is now: " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
 		}
 	}
 
@@ -154,14 +154,11 @@ window.onload = function(event) {
 	setFirst.addEventListener("keydown", function(event) {
 		console.log(event.keyCode);
 		if (event.keyCode === 13) {
-			console.log("no");
 			let bool = validateShort(this.value);
 
 			if (user === null || user === undefined) {
-				console.log("yes");
 				log("> Cannot edit person that has not been made");
 			} else if (bool) {
-				console.log("ok");
 				user.setFirstName(this.value)
 			};
 		}
@@ -171,14 +168,11 @@ window.onload = function(event) {
 	setLast.addEventListener("keydown", function(event) {
 		console.log(event.keyCode);
 		if (event.keyCode === 13) {
-			console.log("no");
 			let bool = validateShort(this.value);
 
 			if (user === null || user === undefined) {
-				console.log("yes");
 				log("> Cannot edit person that has not been made");
 			} else if (bool) {
-				console.log("ok");
 				user.setLastName(this.value);
 			}
 		}
