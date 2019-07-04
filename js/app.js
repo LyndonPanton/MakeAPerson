@@ -95,6 +95,12 @@ window.onload = function(event) {
 		event.preventDefault();
 
 		user = makePerson(this.children[0].value, this.children[1].value);
+
+		if (user) {
+			log("Person made successfully");
+		} else {
+			log("Person not made. Try again");
+		}
 	});
 
 	// freecodecamp version
