@@ -9,28 +9,42 @@ window.onload = function(event) {
 		name = full;
 
 		this.getFirstName = function() {
-			return name.split(" ")[0];
+			log(name.split(" ")[0]);
+			// return name.split(" ")[0];
 		}
 
 		this.getFullName = function() {
-			return name;
+			log(name);
+			// return name;
 		}
 
 		this.getLastName = function() {
-			return name.split(" ")[1];
+			log(name.split(" ")[1]);
+			// return name.split(" ")[1];
 		}
 
 		this.setFirstName = function(newFirst) {
 			name = newFirst + name.split(" ")[1];
+			log("First name is now: " + newFirst);
 		}
 
 		this.setFullName = function(newFull) {
 			name = newFull;
+			log("Full name is now: " + name);
 		}
 
 		this.setLastName = function(newLast) {
 			name = name.split(" ")[0] + newLast;
+			log("Last name is now: " + newLast);
 		}
+	}
+
+	function log(message) {
+		let element = document.createElement("p");
+		let text = document.createTextNode(message);
+
+		element.appendChild(text);
+		document.getElementById("console").appendChild(element);
 	}
 
 	function makePerson(first, last) {
