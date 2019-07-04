@@ -89,6 +89,18 @@ window.onload = function(event) {
 		}
 	}
 
+	function validateShort(name) {
+		if (name === "") {
+			log("> Name must not be empty");
+			return false;
+		} else if (/[^a-zA-Z]/i.test(name)) {
+			log("> Name must only contain alphabetical characters");
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	let chevron = document.getElementById("chevron");
 	chevron.addEventListener("click", function(event) {
 		toggle(this);
@@ -116,7 +128,7 @@ window.onload = function(event) {
 		if (user !== null || user !== undefined) {
 			user.getFirstName();
 		} else {
-			log("> User has not been made");
+			log("> Person has not been made");
 		}
 	});
 
@@ -125,7 +137,7 @@ window.onload = function(event) {
 		if (user !== null || user !== undefined) {
 			user.getLastName();
 		} else {
-			log("> User has not been made");
+			log("> Person has not been made");
 		}
 	});
 
@@ -134,7 +146,41 @@ window.onload = function(event) {
 		if (user !== null || user !== undefined) {
 			user.getFullName();
 		} else {
-			log("> User has not been made");
+			log("> Person has not been made");
+		}
+	});
+
+	let setFirst = document.getElementById("set-first");
+	setFirst.addEventListener("keydown", function(event) {
+		console.log(event.keyCode);
+		if (event.keyCode === 13) {
+			console.log("no");
+			let bool = validateShort(this.value);
+
+			if (user === null || user === undefined) {
+				console.log("yes");
+				log("> Cannot edit person that has not been made");
+			} else if (bool) {
+				console.log("ok");
+				user.setFirstName(this.value)
+			};
+		}
+	});
+
+	let setLast = document.getElementById("set-last");
+	setLast.addEventListener("keydown", function(event) {
+		console.log(event.keyCode);
+		if (event.keyCode === 13) {
+			console.log("no");
+			let bool = validateShort(this.value);
+
+			if (user === null || user === undefined) {
+				console.log("yes");
+				log("> Cannot edit person that has not been made");
+			} else if (bool) {
+				console.log("ok");
+				user.setLastName(this.value);
+			}
 		}
 	});
 
