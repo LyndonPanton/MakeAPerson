@@ -113,6 +113,33 @@ window.onload = function(event) {
 		}
 	});
 
+	let getFirst = document.getElementById("get-first");
+	getFirst.addEventListener("click", function(event) {
+		if (user !== null) {
+			user.getFirstName();
+		} else {
+			log("User has not been made");
+		}
+	});
+
+	let getLast = document.getElementById("get-last");
+	getLast.addEventListener("click", function(event) {
+		if (user !== null) {
+			user.getLastName();
+		} else {
+			log("User has not been made");
+		}
+	});
+
+	let getFull = document.getElementById("get-full");
+	getFull.addEventListener("click", function(event) {
+		if (user !== null) {
+			user.getFullName();
+		} else {
+			log("User has not been made");
+		}
+	});
+
 	// freecodecamp version
 	// var Person = function(firstAndLast) {
 	// 	// Complete the method below and implement the others similarly
