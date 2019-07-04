@@ -31,4 +31,9 @@ window.onload = function(event) {
 			toggle(this);
 		}
 	});
+
+	let form = document.getElementById("form");
+	form.addEventListener("submit", function(event) {
+		event.preventDefault();
+	});
 };
