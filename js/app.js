@@ -67,7 +67,7 @@ window.onload = function(event) {
 			log("> Person successfully made");
 			disable();
 
-			return Person(first + last);
+			return new Person(first + last);
 		}
 	}
 
