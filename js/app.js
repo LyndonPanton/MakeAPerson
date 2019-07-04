@@ -43,6 +43,8 @@ window.onload = function(event) {
 		document.getElementById("form-first").disabled = "disabled";
 		document.getElementById("form-last").disabled = "disabled";
 		document.getElementById("form-submit").disabled = "disabled";
+
+		log("> Form disabled");
 	}
 
 	function log(message) {
@@ -58,7 +60,7 @@ window.onload = function(event) {
 		if (first === "" || last === "") {
 			log("> Name must not be empty");
 			return null;
-		} else if (/^[a-zA-Z]/i.test(first) || /^[a-zA-Z]/i.test(last)) {
+		} else if (/[^a-zA-Z]/i.test(first) || /[^a-zA-Z]/i.test(last)) {
 			log("> Name must only contain alphabetical characters");
 			return null;
 		} else {
@@ -106,7 +108,6 @@ window.onload = function(event) {
 
 		if (user) {
 			log("> Person made successfully");
-			log("> Form disabled");
 		} else {
 			log("> Person not made. Try again");
 		}
