@@ -3,6 +3,8 @@
 window.onload = function(event) {
 	document.getElementById("copyright-year").textContent = (new Date()).getFullYear();
 
+	let user;
+
 	function Person(full) {
 		name = full;
 
@@ -28,6 +30,20 @@ window.onload = function(event) {
 
 		this.setLastName = function(newLast) {
 			name = name.split(" ")[0] + newLast;
+		}
+	}
+
+	function makePerson(first, last) {
+		if (first === "" || last === "") {
+			// log("Name must not be empty")
+			return null;
+		} else if (/^[a-zA-Z]/.test(first) || /^[a-zA-Z]/.test(last)) {
+			// log("Name must only contain alphabetical characters")
+			return null;
+		} else {
+			// log("Person successfully made")
+			// Disable form
+			return Person(first + last);
 		}
 	}
 
@@ -63,6 +79,8 @@ window.onload = function(event) {
 	let form = document.getElementById("form");
 	form.addEventListener("submit", function(event) {
 		event.preventDefault();
+
+		user = makePerson(this.children[0].value, this.children[1].value);
 	});
 
 	// freecodecamp version
