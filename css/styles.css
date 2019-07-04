@@ -76,11 +76,6 @@ main {
 	color: black;
 }
 
-.interact {
-	width: 30%;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-}
-
 .get {
 	margin: 1vh 0;
 	border: 2px green solid;
@@ -88,9 +83,19 @@ main {
 	font-size: 1em;
 }
 
+.interact {
+	width: 30%;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
 .get:active {
 	border-color: red;
 	background-color: aliceblue;
+}
+
+.message {
+	margin: 0.4vh 0;
+	color: white;
 }
 
 .set {
@@ -114,7 +119,11 @@ main {
 	border: 2px silver solid;
 	border-radius: 5px;
 	height: 20vh;
+	padding-left: 2vw;
 	background-color: black;
+	overflow-y: scroll;
+	text-align: left;
+	font-size: 0.9em;
 }
 
 #interact {
