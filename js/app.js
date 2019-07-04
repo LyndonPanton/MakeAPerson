@@ -67,7 +67,7 @@ window.onload = function(event) {
 			log("> Person successfully made");
 			disable();
 
-			return new Person(first + last);
+			return new Person(first + " " + last);
 		}
 	}
 
@@ -106,9 +106,7 @@ window.onload = function(event) {
 
 		user = makePerson(this.children[0].value, this.children[1].value);
 
-		if (user) {
-			log("> Person made successfully");
-		} else {
+		if (user === null) {
 			log("> Person not made. Try again");
 		}
 	});
