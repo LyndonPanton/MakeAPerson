@@ -9,17 +9,17 @@ window.onload = function(event) {
 		name = full;
 
 		this.getFirstName = function() {
-			log("> " + name.split(" ")[0]);
+			log("> " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase());
 			// return name.split(" ")[0];
 		}
 
 		this.getFullName = function() {
-			log("> " + name);
+			log("> " + name.split(" ")[0][0].toUpperCase() + name.split(" ")[0].slice(1).toLowerCase() + " " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
 			// return name;
 		}
 
 		this.getLastName = function() {
-			log("> " + name.split(" ")[1]);
+			log("> " + name.split(" ")[1][0].toUpperCase() + name.split(" ")[1].slice(1).toLowerCase());
 			// return name.split(" ")[1];
 		}
 
