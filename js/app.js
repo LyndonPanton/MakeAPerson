@@ -89,6 +89,30 @@ window.onload = function(event) {
 		}
 	}
 
+	function validateFull(name) {
+		if (name === "") {
+			log("> Name must not be empty");
+			return false;
+		} else if (name.indexOf(" ") === -1) {
+			log("> Name must contain one white space");
+			return false;
+		} else if (name.indexOf(" ") !== name.lastIndexOf(" ")) {
+			log("> Name must only contain one white space");
+			return false;
+		} else if (name.indexOf(" ") === 0) {
+			log("> White space must not be at start of name");
+			return false;
+		} else if (name.indexOf(" ") === (name.length - 1)) {
+			log("> White space must not be at end of name");
+			return false;
+		} else if (/[^a-zA-Z\s]/i.test(name)) {
+			log("> Name must only contain alphabetical characters and one white space character");
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	function validateShort(name) {
 		if (name === "") {
 			log("> Name must not be empty");
@@ -152,7 +176,6 @@ window.onload = function(event) {
 
 	let setFirst = document.getElementById("set-first");
 	setFirst.addEventListener("keydown", function(event) {
-		console.log(event.keyCode);
 		if (event.keyCode === 13) {
 			let bool = validateShort(this.value);
 
@@ -160,13 +183,12 @@ window.onload = function(event) {
 				log("> Cannot edit person that has not been made");
 			} else if (bool) {
 				user.setFirstName(this.value)
-			};
+			}
 		}
 	});
 
 	let setLast = document.getElementById("set-last");
 	setLast.addEventListener("keydown", function(event) {
-		console.log(event.keyCode);
 		if (event.keyCode === 13) {
 			let bool = validateShort(this.value);
 
@@ -174,6 +196,19 @@ window.onload = function(event) {
 				log("> Cannot edit person that has not been made");
 			} else if (bool) {
 				user.setLastName(this.value);
+			}
+		}
+	});
+
+	let setFull = document.getElementById("set-full");
+	setFull.addEventListener("keydown", function(event) {
+		if (event.keyCode === 13) {
+			let bool = validateFull(this.value);
+
+			if (user === null || user === undefined) {
+				log("> Cannot edit person that has not been made");
+			} else if (bool) {
+				user.setFullName(this.value);
 			}
 		}
 	});
