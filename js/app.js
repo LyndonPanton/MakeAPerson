@@ -9,17 +9,17 @@ window.onload = function(event) {
 		name = full;
 
 		this.getFirstName = function() {
-			log(name.split(" ")[0]);
+			log("> " + name.split(" ")[0]);
 			// return name.split(" ")[0];
 		}
 
 		this.getFullName = function() {
-			log(name);
+			log("> " + name);
 			// return name;
 		}
 
 		this.getLastName = function() {
-			log(name.split(" ")[1]);
+			log("> " + name.split(" ")[1]);
 			// return name.split(" ")[1];
 		}
 
