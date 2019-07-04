@@ -69,7 +69,7 @@ main {
 }
 
 .form-input:focus {
-	font-weight: bold;
+	border-bottom-color: green;
 }
 
 .form-input:focus::placeholder {
